@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye Health & Wellness App with Accessibility Options</title>
+  <link rel="stylesheet" href="eye.css">
+</head>
+<body>
+
+  <button class="toggle-btn" onclick="toggleSidebar()">☰ eye Toogle</button>
+  <div class="sidebar" id="sidebar">
+    <h2>Accessibility Options</h2>
+    <label>
+      <input type="checkbox" id="dark-mode" onchange="applySettings()"> Dark Mode
+    </label><br>
+    <label>
+      <input type="checkbox" id="large-text" onchange="applySettings()"> Large Text
+    </label><br>
+    <label>
+      <input type="checkbox" id="high-contrast" onchange="applySettings()"> High Contrast
+    </label><br>
+    <button onclick="resetSettings()">Reset All</button>
+  </div>
+
+  <h1>Eye Health & Wellness App</h1>
+
+  <div class="section">
+    <button onclick="toggleSection('eyeStrain')">Eye Strain Monitor</button>
+    <div id="eyeStrain" class="section-content">
+      <button onclick="startTimer()">Start Monitoring</button>
+      <p id="timerStatus" class="timer"></p>
+      <div id="progressBarContainer" class="progress-bar">
+        <div id="progressBar" class="progress-bar-filled"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection('visionTest')">Vision Test Simulator</button>
+    <div id="visionTest" class="section-content">
+      <h2>Snellen Chart Test</h2>
+      <p>Can you read this letter?</p>
+      <p id="letters" class="vision-text">E</p>
+
+      <p>Test your vision!</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection('blinkReminder')">Closing Reminder</button>
+    <div id="blinkReminder" class="section-content">
+      <label for="blinkTime">Enter minutes for Closing Reminder:</label>
+      <input type="number" id="blinkTime" placeholder="Number of minutes" min="1">
+      <button onclick="startBlinkReminder()">Start Closing Reminder</button>
+      <p id="blinkMessage" class="blinkMessage"></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection('eyeHealth')">Eye Health Tracker</button>
+    <div id="eyeHealth" class="section-content">
+      <label for="symptom">Log your Symptom:</label>
+      <input type="text" id="symptom" placeholder="Enter symptom">
+      <button onclick="logSymptom()">Log Symptom</button>
+      <div class="symptom-history">
+        <h3>Symptom History:</h3>
+        <ul id="symptomHistory"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="alertMessage" class="alert">
+    Your screen limit Crossed! Remainder To Close Screen
+  </div>
+
+<script src="eye.js"></script>
+
+</body>
+</html>
